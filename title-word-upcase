@@ -67,6 +67,7 @@ for (item of items) {
                             replace(' A ', ' a ').
                             replace('sdof', 'SDOF').
                             replace('Sdof', 'SDOF').
+                            replace(' Ii', ' II').
                             replace('opensees', 'Opensees')
 
 
