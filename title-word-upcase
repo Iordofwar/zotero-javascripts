@@ -52,8 +52,8 @@ for (item of items) {
                             replace(' R/c', ' R/C').
                             replace(' Pc ', ' PC ').
                             replace(' rc ', ' RC ').
-                            replace('Ida', 'IDA').
-                            replace('ida', 'IDA').
+                            replace('Ida ', 'IDA ').
+                            replace('ida ', 'IDA ').
                             replace('Fib ', 'FIB ').
                             replace('fema', 'FEMA').
                             replace('Fema', 'FEMA').
@@ -73,6 +73,7 @@ for (item of items) {
                             replace('Sdof', 'SDOF').
                             replace(' Ii', ' II').
                             replace('Presss ', 'PRESSS ').
+                            replace('Idarc', 'IDARC').
                             replace('opensees', 'Opensees')
 
 
