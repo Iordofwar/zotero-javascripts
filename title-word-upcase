@@ -50,7 +50,7 @@ for (item of items) {
                             replace(' rc ', ' RC ').
                             replace('Ida', 'IDA').
                             replace('ida', 'IDA').
-                            replace(' Fib ', ' FIB ').
+                            replace('Fib ', 'FIB ').
                             replace('fema', 'FEMA').
                             replace('Fema', 'FEMA').
                             replace('Nehrp', 'NEHRP').
