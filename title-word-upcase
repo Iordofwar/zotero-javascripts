@@ -5,42 +5,46 @@ for (item of items) {
             var title = item.getField('title');
             new_title = titleCase(title).
                             replace(' And ', ' and ').
-                            replace(' The ', ' the ').
-                            replace(' The ', ' the ').
-                            replace(' The ', ' the ').
                             replace(' And ', ' and ').
+                            replace(' And ', ' and ').
+                            replace(' And ', ' and ').
+                            replace(' The ', ' the ').
+                            replace(' The ', ' the ').
+                            replace(' The ', ' the ').
+                            replace(' The ', ' the ').
+                            replace(' For ', ' for ').
+                            replace(' For ', ' for ').
+                            replace(' For ', ' for ').
                             replace(' For ', ' for ').
                             replace(' In ', ' in ').
+                            replace(' In ', ' in ').
+                            replace(' In ', ' in ').
+                            replace(' In ', ' in ').
+                            replace(' Of ', ' of ').
+                            replace(' Of ', ' of ').
+                            replace(' Of ', ' of ').
                             replace(' Of ', ' of ').
                             replace(' On ', ' on ').
+                            replace(' On ', ' on ').
+                            replace(' On ', ' on ').
+                            replace(' On ', ' on ').
+                            replace(' By ', ' by ').
+                            replace(' By ', ' by ').
+                            replace(' By ', ' by ').
                             replace(' By ', ' by ').
                             replace(' To ', ' to ').
-                            replace(' And ', ' and ').
-                            replace(' For ', ' for ').
-                            replace(' In ', ' in ').
-                            replace(' Of ', ' of ').
-                            replace(' On ', ' on ').
-                            replace(' By ', ' by ').
+                            replace(' To ', ' to ').
+                            replace(' To ', ' to ').
                             replace(' To ', ' to ').
                             replace(' With ', ' with ').
                             replace(' With ', ' with ').
-                            replace(' And ', ' and ').
-                            replace(' For ', ' for ').
-                            replace(' In ', ' in ').
-                            replace(' Of ', ' of ').
-                            replace(' On ', ' on ').
-                            replace(' By ', ' by ').
-                            replace(' To ', ' to ').
-                            replace(' And ', ' and ').
-                            replace(' For ', ' for ').
-                            replace(' In ', ' in ').
-                            replace(' Of ', ' of ').
-                            replace(' On ', ' on ').
-                            replace(' By ', ' by ').
-                            replace(' To ', ' to ').
                             replace(' With ', ' with ').
                             replace(' With ', ' with ').
                             replace(' At ', ' at ').
+                            replace(' At ', ' at ').
+                            replace(' At ', ' at ').
+                            replace(' At ', ' at ').
+
                             replace('italy', 'Italy').
                             replace('Aci ', 'ACI ').
                             replace('Pci ', 'PCI ').
@@ -68,6 +72,7 @@ for (item of items) {
                             replace('sdof', 'SDOF').
                             replace('Sdof', 'SDOF').
                             replace(' Ii', ' II').
+                            replace('Presss ', 'PRESSS ').
                             replace('opensees', 'Opensees')
 
 
