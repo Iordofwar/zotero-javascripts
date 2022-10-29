@@ -1,0 +1,87 @@
+// 将单词转为首字母大写
+var items = ZoteroPane.getSelectedItems();
+var n = 0;
+for (item of items) {
+            var title = item.getField('title');
+            new_title = titleCase(title).
+                            replace(' And ', ' and ').
+                            replace(' The ', ' the ').
+                            replace(' The ', ' the ').
+                            replace(' The ', ' the ').
+                            replace(' And ', ' and ').
+                            replace(' For ', ' for ').
+                            replace(' In ', ' in ').
+                            replace(' Of ', ' of ').
+                            replace(' On ', ' on ').
+                            replace(' By ', ' by ').
+                            replace(' To ', ' to ').
+                            replace(' And ', ' and ').
+                            replace(' For ', ' for ').
+                            replace(' In ', ' in ').
+                            replace(' Of ', ' of ').
+                            replace(' On ', ' on ').
+                            replace(' By ', ' by ').
+                            replace(' To ', ' to ').
+                            replace(' With ', ' with ').
+                            replace(' With ', ' with ').
+                            replace(' And ', ' and ').
+                            replace(' For ', ' for ').
+                            replace(' In ', ' in ').
+                            replace(' Of ', ' of ').
+                            replace(' On ', ' on ').
+                            replace(' By ', ' by ').
+                            replace(' To ', ' to ').
+                            replace(' And ', ' and ').
+                            replace(' For ', ' for ').
+                            replace(' In ', ' in ').
+                            replace(' Of ', ' of ').
+                            replace(' On ', ' on ').
+                            replace(' By ', ' by ').
+                            replace(' To ', ' to ').
+                            replace(' With ', ' with ').
+                            replace(' With ', ' with ').
+                            replace(' At ', ' at ').
+                            replace('italy', 'Italy').
+                            replace('Aci ', 'ACI ').
+                            replace('Pci ', 'PCI ').
+                            replace(' Rc ', ' RC ').
+                            replace(' R/c', ' R/C').
+                            replace(' Pc ', ' PC ').
+                            replace(' rc ', ' RC ').
+                            replace('Ida', 'IDA').
+                            replace('ida', 'IDA').
+                            replace(' Fib ', ' FIB ').
+                            replace('fema', 'FEMA').
+                            replace('Fema', 'FEMA').
+                            replace('Nehrp', 'NEHRP').
+                            replace('Pbsec', 'PBSEC').
+                            replace('Frp', 'FRP').
+                            replace(' Sc ', ' SC ').
+                            replace('Pbspc', 'PBSPC').
+                            replace(' Brb ', ' BRB ').
+                            replace(' Brbf ', ' BRBF ').
+                            replace('Sac', 'SAC').
+                            replace('R.c.', ' R.C.').
+                            replace(' pushover ', ' Pushover ').
+                            replace(' 3d ', ' 3D ').
+                            replace(' A ', ' a ').
+                            replace('sdof', 'SDOF').
+                            replace('Sdof', 'SDOF').
+                            replace('opensees', 'Opensees')
+
+
+            item.setField('title', new_title);
+            await item.saveTx();
+            n ++
+};
+
+return n + '个条目的题目大小写转为词首字母大写，有些特殊缩写单词可能转换错误，请查实。';
+
+// 将单词转为首字母大写
+function titleCase(str) {   
+     var newStr = str.split(" ");    
+     for(var i = 0; i < newStr.length; i++) {
+        newStr[i] = newStr[i].slice(0,1).toUpperCase() + newStr[i].slice(1).toLowerCase();
+        }      
+     return newStr.join(" ");
+};
