@@ -1,0 +1,54 @@
+zoteroPane = Zotero.getActiveZoteroPane();
+items = zoteroPane.getSelectedItems();
+   function  isChina(s){
+        var  index = escape(s).indexOf("%u");
+        if(index < 0)
+          {return false;}
+        else
+          {return true;}
+    }  
+
+var re=0; //计数英文替换条目个数
+var rc=0;//计数中文替换条目个数
+var lan="en-US"; //替换的语言
+
+for (item of items) {
+    if (item && !item.isNote()) {
+        if (item.isAttachment()) {
+            // find out about attachment
+            continue;
+        }
+    }
+    var la =item.getField("language");
+    var Title=item.getField("title");
+    var Page=item.getField("pages");
+    var issue=item.getField("issue");
+    var index=Page.indexOf("+");
+    if (index>0)
+    {
+        var page=Page.substring(0,index)+','+Page.substring(index+1);
+        item.setField("pages",page);
+         await item.saveTx();
+    }
+    if (issue[0]==0)
+    {
+        issue=issue.substring(1);
+        item.setField("issue",issue);
+         await item.saveTx();
+    }
+ 
+    if (la=="")//如果为空则替换
+        if(isChina(Title)==false)
+         {
+             item.setField("language", lan);
+             re+=1;
+             await item.saveTx();
+        }
+        else if(isChina(Title))
+        {
+            item.setField("language", "zh-CN");
+             rc+=1;
+             await item.saveTx();
+        }
+}
+return re+"个条目语言被替换为"+lan+"；"+rc+"个条目语言被替换为"+"zh-CN。"
