@@ -1,0 +1,51 @@
+zoteroPane = Zotero.getActiveZoteroPane();
+items = zoteroPane.getSelectedItems();
+
+var cnt = 0;
+var ans = ""
+
+//需要全部大写的
+var up = new Set(['idarc', '3d','aci ', 'pci ', ' rc ', ' r/c', ' pc ', 'ida' , 'fib ', 'fema', 'nehrp', 'pbsec', 'frp', ' sc ', ' brb ', ' brbf ', 'sac', 'r.c. ', 'sdof', 'opensees'])
+
+
+//一些奇怪的缩写或者专有名词在这写
+var map = new Map([["Italy", "Pushover"]])
+for (var i = 0; i < items.length; i++) {
+    var currTitle = items[i].getField("title");
+    //先统一格式
+    currTitle = currTitle.toLowerCase()
+    for (var key of up) {
+        //zotero的js不支持replaceAll,出此下策
+        while (true) {
+            var temp = currTitle.replace(key, key.toUpperCase());
+            if (temp === currTitle) break
+            currTitle = temp
+        }
+    }
+       //修改一些特殊的专有名词，需要用的时候将"/ *"和"* /"删除掉
+       for (var key of map) {
+           //zotero的js不支持replaceAll,出此下策
+           while (true) {
+               var temp = currTitle.replace(key, map.get(key));
+               if (temp === currTitle) break
+               currTitle = temp
+           }
+       }
+
+
+    //一般题目全都是小写，除了首字母和冒号后的首字母
+    var split = currTitle.split(":");
+    for (var j = 0; j < split.length; j++) {
+        currWord = split[j]
+        var idx = 0
+        while (idx < currWord.length && currWord[idx] === ' ') idx++
+        split[j] = currWord.replace(currWord[idx], currWord[idx].toUpperCase())
+    }
+    var res = split.join(":");
+    ans += res + "\n\n"
+    items[i].setField("title", res);
+    cnt++;
+    await items[i].saveTx();
+}
+ans = "修改了" + cnt + "份文献的名称\n" + ans
+return ans
