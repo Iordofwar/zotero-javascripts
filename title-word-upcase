@@ -60,8 +60,8 @@ for (item of items) {
                             replace('Nehrp', 'NEHRP').
                             replace('Pbsec', 'PBSEC').
                             replace('Frp', 'FRP').
-                            replace(' Sc ', ' SC ').
-                            replace('Pbspc', 'PBSPC').
+                            replace(' Sc-', ' SC-').
+                            replace('pbspc', 'PBSPC').
                             replace(' Brb ', ' BRB ').
                             replace(' Brbf ', ' BRBF ').
                             replace('Sac', 'SAC').
